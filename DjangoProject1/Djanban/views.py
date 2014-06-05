@@ -7,12 +7,20 @@ import json
 from Djanban.models import WorkItem
 
 def index(request):
-    #return HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'Board/index.html')
 
 def board(request, team_id):
+    def Team(id):
+        return {
+            '0': 'Team Blue',
+            '1': 'Team Red',
+            '3': 'Team Green',
+            '4': 'Team Orange'
+        }[id]
+
     return render(request, 'Board/detail.html', {
-            'team': team_id,
+            'teamid': team_id,
+            'team': Team(team_id)
             })
 
 def items(request, team_id):
