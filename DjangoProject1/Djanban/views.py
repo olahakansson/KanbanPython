@@ -6,9 +6,11 @@ import json
 
 from Djanban.models import WorkItem
 
+#start page
 def index(request):
     return render(request, 'Board/index.html')
 
+# the board
 def board(request, team_id):
     def Team(id):
         return {
@@ -17,12 +19,13 @@ def board(request, team_id):
             '3': 'Team Green',
             '4': 'Team Orange'
         }[id]
-
+ 
     return render(request, 'Board/detail.html', {
             'teamid': team_id,
             'team': Team(team_id)
             })
 
+#data to the board
 def items(request, team_id):
     data = {}
     data['something'] = 'useful'
