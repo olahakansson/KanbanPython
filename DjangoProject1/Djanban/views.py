@@ -19,12 +19,13 @@ def board(request, team_id):
             '3': 'Team Green',
             '4': 'Team Orange'
         }[id]
- #data to the board
+ 
     return render(request, 'Board/detail.html', {
             'teamid': team_id,
             'team': Team(team_id)
             })
 
+#data to the board
 def items(request, team_id):
     data = {}
     data['something'] = 'useful'
