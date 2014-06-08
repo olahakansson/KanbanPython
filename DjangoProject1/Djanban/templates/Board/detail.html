@@ -1,5 +1,5 @@
 <html>
-<head><title></title>
+<head><title>{{ team }}</title>
 {% load staticfiles %}
 <script type="text/javascript" src="{% static 'Board/jquery-1.11.1.min.js' %}" ></script>    
 <script type="text/javascript" src="{% static 'Board/board.js' %}" ></script>
@@ -8,10 +8,11 @@
 
 <body>
 
-Team: <div Id="teamid">{{ team }}</div>
+Team: <div Id="teamid">{{ teamid }}</div>
 
 <div id="data"></div>
+{% verbatim %}
 <div>utan ngt som django vet{{utan}}</div>
-
+{% endverbatim %}
 </body>
 </html>
